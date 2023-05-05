@@ -1,7 +1,16 @@
 let count = 0;
 const countElement = document.getElementById("count");
 const realNumElement = document.getElementById("realNum");
-const kiwiNumbers = prompt("Enter the Kiwi Numbers", "Kiwi Numbers");
+let kiwiNumbers = [];
+
+// Wait till the page loads to for ask the numbers
+window.onload = function () {
+  kiwiNumbers = prompt(
+    "Please enter the Kiwi numbers you want to include. For example, if you want to include the numbers 1, 2, and 7, you can input 127 with or without separating them.",
+    ""
+  );
+  changeCount(0); // Update current value
+};
 
 function changeCount(amount) {
   count += amount;
@@ -32,10 +41,16 @@ function KeyDown(event) {
     case 46:
       changeCount(-1);
       break;
+    case 40:
+      changeCount(-1);
+      break;
     case 13:
       changeCount(1);
       break;
     case 32:
+      changeCount(1);
+      break;
+    case 38:
       changeCount(1);
       break;
     default:
@@ -43,6 +58,6 @@ function KeyDown(event) {
   }
 }
 
-document.addEventListener('gesturestart', function(e) {
+document.addEventListener("gesturestart", function (e) {
   e.preventDefault();
 });
