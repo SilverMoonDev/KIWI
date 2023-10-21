@@ -24,7 +24,9 @@ As the host, your role is to manage the KIWI game. Here's what you need to do:
     * You can also use the buttons on the screen
 4. **Game Rules:** 
 
-    * Instruct the players that they must replace the forbidden digits with "KIWI." If they accidentally say the forbidden number, they are eliminated. The game continues until only one player remains as the winner.
+    * Instruct the players that they must say "KIWI" instead of the real number if any of the forbidden digits is in the current number.
+    * If they accidentally say the forbidden number, they are eliminated.
+    * The game continues until only one player remains as the winner.
 
 5. **Manage the Counter:**
 
