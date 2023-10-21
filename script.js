@@ -7,7 +7,7 @@ const countElement = document.getElementById("count");
 // Get the real number element from the DOM
 const realNumElement = document.getElementById("realNum");
 
-// Initialize a set to store the kiwi numbers
+// Initialize an arraay to store the kiwi numbers
 let kiwiNumbers = [];
 
 // When the window loads, prompt the user to enter the kiwi numbers
@@ -25,7 +25,7 @@ function changeCount(amount) {
 
   const digits = counter.toString().split('');
 
-  // Check if any of the digits are in the kiwiNumbers set
+  // Check if any of the digits are in the kiwiNumbers array
   const containsNumber = digits.some(digit => kiwiNumbers.includes(digit));
 
   // Update the real number element with the current count
