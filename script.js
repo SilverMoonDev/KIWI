@@ -8,14 +8,14 @@ const countElement = document.getElementById("count");
 const realNumElement = document.getElementById("realNum");
 
 // Initialize a set to store the kiwi numbers
-let kiwiNumbers = new Set();
+let kiwiNumbers = [];
 
 // When the window loads, prompt the user to enter the kiwi numbers
 window.onload = function () {
-  kiwiNumbers = new Set(prompt(
+  kiwiNumbers = prompt(
     `Please enter the Kiwi numbers you want to include. For example, 169; You can use any separator or no separator`,
     ""
-  ).split(''));
+  ).split('');
   changeCount(0); // Update current value to display KIWI in case that 0 is a KIWI number
 };
 
@@ -23,8 +23,10 @@ function changeCount(amount) {
   // Increment or decrement the counter based on the input amount
   counter += amount;
 
+  const digits = counter.toString().split('');
+
   // Check if any of the digits are in the kiwiNumbers set
-  const containsNumber = [counter.toString()].some(digit => kiwiNumbers.has(digit));
+  const containsNumber = digits.some(digit => kiwiNumbers.includes(digit));
 
   // Update the real number element with the current count
   realNumElement.innerText = counter;
