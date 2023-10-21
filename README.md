@@ -30,7 +30,7 @@ As the host, your role is to manage the KIWI game. Here's what you need to do:
 
 5. **Manage the Counter:**
 
-    * You should have a way to manually increment or decrement the counter based on player responses.
+    * You have to increment the number when a player says a number or KIWI.
 6. **Eliminations:**
 
     * Keep track of eliminated players. When a player says the forbidden number, they are out of the game.
