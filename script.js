@@ -13,7 +13,7 @@ let kiwiNumbers = new Set();
 // When the window loads, prompt the user to enter the kiwi numbers
 window.onload = function () {
   kiwiNumbers = new Set(prompt(
-    `Please enter the Kiwi numbers you want to include. For example, 169, you can use any separator or no separator`,
+    `Please enter the Kiwi numbers you want to include. For example, 169; You can use any separator or no separator`,
     ""
   ).split(''));
   changeCount(0); // Update current value to display KIWI in case that 0 is a KIWI number
