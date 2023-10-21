@@ -38,4 +38,5 @@ As the host, your role is to manage the KIWI game. Here's what you need to do:
 8. **Enjoy the Game:**
 
     * As the host, have fun and enjoy watching the players try to avoid saying the forbidden digits.
+
 Remember that players don't need access to the website; it's for your reference and control of the game. Enjoy hosting the KIWI game and may the best player win!
