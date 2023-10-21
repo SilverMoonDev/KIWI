@@ -1,50 +1,66 @@
-let count = 0;
-const countElement = document.getElementById("count");
-const realNumElement = document.getElementById("realNum");
-let kiwiNumbers = [];
+// Initialize the counter variable
+let counter = 0;
 
+// Get the count element from the DOM
+const countElement = document.getElementById("count");
+
+// Get the real number element from the DOM
+const realNumElement = document.getElementById("realNum");
+
+// Initialize a set to store the kiwi numbers
+let kiwiNumbers = new Set();
+
+// When the window loads, prompt the user to enter the kiwi numbers
 window.onload = function () {
-  kiwiNumbers = prompt(
-    "Please enter the Kiwi numbers you want to include. For example, if you want to include the numbers 1, 2, and 7, you can input 127 with or without separating them.",
+  kiwiNumbers = new Set(prompt(
+    `Please enter the Kiwi numbers you want to include. For example, 169, you can use any separator or no separator`,
     ""
-  );
-  changeCount(0); // Update current value
+  ).split(''));
+  changeCount(0); // Update current value to display KIWI in case that 0 is a KIWI number
 };
 
 function changeCount(amount) {
-  count += amount;
-  const digits = count.toString().split('');
-  const containsNumber = digits.some(digit => kiwiNumbers.includes(digit));
-  realNumElement.innerText = count;
+  // Increment or decrement the counter based on the input amount
+  counter += amount;
+
+  // Check if any of the digits are in the kiwiNumbers set
+  const containsNumber = [counter.toString()].some(digit => kiwiNumbers.has(digit));
+
+  // Update the real number element with the current count
+  realNumElement.innerText = counter;
+
+  // If the counter contains any of the kiwi numbers, display "KIWI"
+  // Otherwise, display the count
   if (containsNumber) {
     countElement.innerText = "KIWI";
   } else {
-    countElement.innerText = count;
+    countElement.innerText = counter;
   }
 }
 
+// Keyboard events handler
 document.addEventListener("keydown", function (event) {
-  if (event.code.startsWith("Key")) {
-    changeCount(1);
-    return;
-  }
-  let KeyID = event.keyCode;
-  switch (KeyID) {
-    case 8:
-    case 46:
-    case 40:
+  // Get the key that was pressed
+  let key = event.key;
+
+  switch (key) {
+    case "Backspace":
+    case "Delete":
+    case "ArrowDown":
       changeCount(-1);
       break;
-    case 13:
-    case 32:
-    case 38:
+    case "Enter":
+    case " ":
+    case "ArrowUp":
       changeCount(1);
       break;
     default:
+      changeCount(1);
       break;
   }
 });
 
+// Prevent phone users from zooming in
 document.addEventListener("gesturestart", function (e) {
   e.preventDefault();
 });
