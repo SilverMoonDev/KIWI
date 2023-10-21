@@ -5,7 +5,7 @@ The KIWI game is a number game where players have to avoid saying numbers contai
 ## Host Instructions
 As the host, your role is to manage the KIWI game. Here's what you need to do:
 
-1. Set Up the Environment:
+1. **Set Up the Environment:**
 
     * Open the KIWI game website on your device. The website is for your reference only; players don't need access to it.
 
